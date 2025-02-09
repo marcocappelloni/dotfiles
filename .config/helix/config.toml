@@ -1,0 +1,35 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+true-color = true
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+popup-border = "all"
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+left = ["file-modification-indicator","mode", "spinner","read-only-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "total-line-numbers", "file-type"]
+separator = "│" 
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "┆" # Some characters that work well: "▏","╎", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
