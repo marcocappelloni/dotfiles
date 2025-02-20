@@ -68,3 +68,6 @@ alias qtlog="nvim ~/.local/share/qtile/qtile.log"
 alias nvconf="cd ~/.config/nvim"
 
 alias hx="helix"
+
+alias trash-clean="rm -rf ~/.local/share/Trash/*"
+
