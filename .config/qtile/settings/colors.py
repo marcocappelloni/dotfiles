@@ -59,4 +59,4 @@ colors_macchiato = {
     "color15": "#A5ADCB"
 }
 
-colors = colors_frappe
+colors = colors_macchiato

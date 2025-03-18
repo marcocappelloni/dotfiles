@@ -232,3 +232,6 @@ UXTerm*color15: rgb:ff/ff/ff
 UXTerm*boldMode: false
 UXTerm*colorBDMode: true
 UXTerm*colorBD: rgb:ff/ff/ff
+
+
+!Xcursor.theme: Catppuccin-Teal-Cursors

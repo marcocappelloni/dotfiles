@@ -24,7 +24,7 @@ super + F4
 
 #Working hours
 super + F5
-    libreoffice --calc PersonalHome/Lavoro/PizzaExpress/WorkingHours_2024.ods
+    libreoffice --calc PersonalHome/Lavoro/PizzaExpress/WorkingHours_2025.ods
 
 #Mail client
 super + F6
