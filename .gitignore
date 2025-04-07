@@ -39,3 +39,9 @@ lazy-lock.json
 
 .tmux-cht-command
 .tmux-cht-languages
+
+lazy-lock.json
+config.cpython-313.pyc
+layouts.cpython-313.pyc
+widgets.cpython-313.pyc
+

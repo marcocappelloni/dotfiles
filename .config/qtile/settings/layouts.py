@@ -46,11 +46,5 @@ floating_layout = layout.Floating(
         Match(wm_class='feh'),
         Match(wm_class='Arcolinux-welcome-app.py'),
         Match(wm_class='confirm'),
-        #Match(title='Confirmation'),      # tastyworks exit box
-        #Match(title='Qalculate!'),        # qalculate-gtk
         Match(title="pinentry"),          # GPG key password entry
-        #Match(title="tastycharts"),       # tastytrade pop-out charts
-        #Match(title="tastytrade"),        # tastytrade pop-out side gutter
-        #Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
-        #Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
 	])

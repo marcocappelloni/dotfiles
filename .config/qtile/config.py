@@ -1,14 +1,9 @@
 # This file will serve as the entry point and will import and combine all the other configuration files.
 # Import necessary modules
-# from libqtile.config import Key
-#from libqtile.lazy import lazy
 import os
 import subprocess
 from libqtile.utils import send_notification
 from libqtile import hook
-#from hooks import hooks
-#from libqtile.lazy import lazy
-#from libqtile.core.manager import Qtile
 
 from settings.groups import groups
 from settings.keys import mod, keys
@@ -23,14 +18,6 @@ def start_once():
     subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
     pass
 
-#@hook.subscribe.startup_complete
-#def focus_screen():
-#    send_notification("qtile", "Startup complete")
-#    lazy.to_screen(1)  # Focus on the second screen (index 1)
-
-#startup = [
-#    lazy.to_screen(1),
-#]
 
 # Set this to false if you only want windows to be fullscreen if you ask them to be.
 auto_fullscreen = True
@@ -73,6 +60,3 @@ wmname = 'LG3D'
 # If things like steam games want to auto-minimize themselves when losing focus, should we respect this or not?
 auto_minimize = True 
 
-
-#@hook.subscribe.startup_once
-#	hooks[0]["startup_hook"]
