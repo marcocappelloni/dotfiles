@@ -24,12 +24,6 @@ bettercd() {
 
 alias cdb='bettercd'
 
-#list
-#alias ls='ls --color=auto'
-#alias la='ls -A'
-#alias ll='ls -AlFh'
-#alias l.="ls -A | grep -E '^\.'"
-#alias dir='ls -al'
 alias ls='lsd --color=auto'
 alias la='lsd -A'
 alias ll='lsd -Alh'

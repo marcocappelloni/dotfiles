@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.md
+/.config/alacritty
+/.config/helix
+/.config/i3
+/.config/polybar
+/.config/yazi
+
