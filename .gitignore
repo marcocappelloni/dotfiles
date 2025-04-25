@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 lazy-lock.json
+*__pycache__*
 
 .tmux-cht-command
 .tmux-cht-languages
