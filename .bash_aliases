@@ -40,13 +40,7 @@ alias df='df -h'
 alias free="free -mth"
 
 # Aliases for software managment
-alias update='sudo pacman -Syyu'
-
-# paru as aur helper - updates everything
-alias upall="paru -Syu --noconfirm"
-
-#Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias update='sudo apt update && sudo apt upgrade'
 
 #shutdown or reboot
 alias ssn="sudo shutdown now"
