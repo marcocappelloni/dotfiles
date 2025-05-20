@@ -1,12 +1,17 @@
 #!/bin/bash
 
+# keyboard key press speed
 xset r rate 300 40 &
+
+# set of commands to disable the screensaver
 xset s off
 xset -dpms
 xset s noblank
 
+# dwm status bar
 exec slstatus &
 
+# wallpaper selection
 nitrogen --restore &
 
 # compositor
