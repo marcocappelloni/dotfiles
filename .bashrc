@@ -134,3 +134,4 @@ shopt -s expand_aliases # expand aliases
 
 # Set the vi keybindings
 # set -o 
+. "$HOME/.cargo/env"

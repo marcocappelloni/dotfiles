@@ -33,3 +33,5 @@ volumeicon &
 
 # Network Manager
 nm-applet &
+
+$HOME/PersonalHome/Scripts/MyApps/dimmer/dimmer_time_check.sh &
