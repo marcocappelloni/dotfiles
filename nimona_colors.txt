@@ -1,0 +1,14 @@
+Dark grey       #565352
+Light grey      #B3B4B3
+Dark brown      #C65241
+Grey brownisc   #816B67
+Black           #28221F
+Light brown     #D97360
+Grey            #9D9D9B
+Darker grey     #373635
+Pink            #D2A098
+
+Thatch          #B99E9A
+Dune            #292524
+Flame Pea       #E45B43
+El Salva        #943B2F

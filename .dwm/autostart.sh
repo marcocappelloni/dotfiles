@@ -12,7 +12,9 @@ xset s noblank
 exec slstatus &
 
 # wallpaper selection
-nitrogen --restore &
+# nitrogen --restore &
+#Some ways to set your wallpaper besides variety or nitrogen
+feh --bg-fill  /home/maky/Pictures/wallpapers/ign_iceAndFire.jpg /home/maky/Pictures/wallpapers/ign_tokyo.jpg &
 
 # compositor
 picom --config ~/.config/picom.conf &
