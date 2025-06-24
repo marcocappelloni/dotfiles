@@ -83,7 +83,8 @@ alias ssn="sudo shutdown now"
 alias sr="reboot"
 
 alias mv="mv -i"
-alias rm="rm -I"
+#alias rm="rm -I"
+alias rm="trash-put -v"
 
 ### GIT
 alias push="git push -u origin main"

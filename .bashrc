@@ -134,6 +134,9 @@ shopt -s expand_aliases # expand aliases
 # Open in tmux popup if on tmux, otherwise use --height mode
 export FZF_DEFAULT_OPTS='--layout=reverse --border=bold --border=rounded --margin=3% --color=dark --color=border:#225577 --preview="bat --color=always {}"'
 
+# Set the shell color
+PS1='\[\e[36m\]\u@\h:\w\$ \[\e[0m\]'
+
 # Set up fzf key bindings and fuzzy completion
 # CTRL-T Paste the selected files and directories onto the command-line
 # CTRL-R Paste the selected command from history onto the command-line
