@@ -108,3 +108,5 @@ alias hx="helix"
 
 #our experimental - best option for the moment
 alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
+
+alias man="batman"
