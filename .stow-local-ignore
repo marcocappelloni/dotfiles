@@ -1,5 +1,7 @@
 .git
 .gitignore
+bloodynight_colors.txt
+nimona_colors.txt
 README.md
 /.config/alacritty
 /.config/helix
