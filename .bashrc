@@ -137,7 +137,7 @@ export FZF_DEFAULT_OPTS='--layout=reverse --border=bold --border=rounded --margi
 # Set the shell prompt color
 # PS1='\[\e[36m\]\u@\h:\w\$ \[\e[0m\]'
 # Adding the git branch to the prompt
-PS1='\[\e[33m\] \[\e[34m\]\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1)\[\e[00m\]$ '
+PS1='\[\e[31m\] \[\e[34m\]\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1)\[\e[00m\]$ '
 
 # Set up fzf key bindings and fuzzy completion
 # CTRL-T Paste the selected files and directories onto the command-line
