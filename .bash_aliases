@@ -76,7 +76,7 @@ alias df='df -h'
 alias free="free -mth"
 
 # Aliases for software managment
-alias update='sudo apt update && sudo apt upgrade'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoclean'
 
 #shutdown or reboot
 alias ssn="sudo shutdown now"
