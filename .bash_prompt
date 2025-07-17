@@ -1,0 +1,30 @@
+#!/bin/bash
+# Build the shell prompt for bash. This file is called inside .bashrc
+
+function _failed_cmd {
+  if [[ $? -eq 0 ]]; then
+    printf "\e[32m"
+  else
+    printf "\e[31m󰅖"
+  fi
+}
+
+RED="\[\e[31m\]"
+GREEN="\[\e[32m\]"
+BROWN="\[\e[33m\]"
+BLUE="\[\e[34m\]"
+PURPLE="\[\e[35m\]"
+CYAN="\[\e[36m\]"
+RESET_COLOR="\[\e[0m\]"
+
+# Set the shell prompt color
+# PS1='\[\e[36m\]\u@\h:\w\$ \[\e[0m\]'
+# Adding the git branch to the prompt
+export GIT_PS1_SHOWDIRTYSTATE=1
+PS1="${RED}  "
+PS1+="${BLUE}\u@\h "
+PS1+="${GREEN}\w "
+PS1+="${RED}\$(__git_ps1 '(%s )') "
+PS1+='$(_failed_cmd) '
+PS1+="${RESET_COLOR}> "
+#PS1='\[\e[31m\] \[\e[34m\]\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1 "(%s )")$(_failed_cmd) \[\e[00m\]> '
