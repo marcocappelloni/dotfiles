@@ -1,5 +1,6 @@
 #!/bin/bash
 # Build the shell prompt for bash. This file is called inside .bashrc
+# https://wiki.archlinux.org/title/Bash/Prompt_customization#Terminfo_escape_sequences
 
 function _failed_cmd {
   if [[ $? -eq 0 ]]; then
@@ -9,23 +10,36 @@ function _failed_cmd {
   fi
 }
 
-RED="\[\e[31m\]"
-GREEN="\[\e[32m\]"
-BROWN="\[\e[33m\]"
-BLUE="\[\e[34m\]"
-PURPLE="\[\e[35m\]"
-CYAN="\[\e[36m\]"
-RESET_COLOR="\[\e[0m\]"
+RED="\[$(tput setaf 1)\]"
+GREEN="\[$(tput setaf 2)\]"
+YELLOW="\[$(tput setaf 3)\]"
+BLUE="\[$(tput setaf 4)\]"
+MAGENTA="\[$(tput setaf 5)\]"
+CYAN="\[$(tput setaf 6)\]"
+DARK_YELLOW="\[$(tput setaf 214)\]"
+ORANGE="\[$(tput setaf 208)\]"
+UBUNTU="\[$(tput setaf 168)\]"
+RESET="\[$(tput sgr0)\]"
+BOLD="\[$(tput bold)\]"
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+PS1="${UBUNTU}  "
+PS1+="${BLUE}\u@\h "
+PS1+="${GREEN}\w "
+PS1+="${RED}\$(__git_ps1 '(%s )') "
+PS1+="\$(_failed_cmd) "
+PS1+="${DARK_YELLOW} "
+PS1+="${RESET}"
 
 # Set the shell prompt color
 # PS1='\[\e[36m\]\u@\h:\w\$ \[\e[0m\]'
 # Adding the git branch to the prompt
-export GIT_PS1_SHOWDIRTYSTATE=1
-PS1="${RED}  "
-PS1+="${BLUE}\u@\h "
-PS1+="${GREEN}\w "
-PS1+="${RED}\$(__git_ps1 '(%s )') "
-PS1+='$(_failed_cmd) '
-PS1+="${BROWN} "
-PS1+="${RESET_COLOR}"
 #PS1='\[\e[31m\] \[\e[34m\]\u@\h \[\e[32m\]\w \[\e[91m\]$(__git_ps1 "(%s )")$(_failed_cmd) \[\e[00m\]> '
+
+## list all the colors
+#for C in {0..255}; do
+#  tput setaf $C
+#  echo -n "$C "
+#done
+#tput sgr0
+#echo
