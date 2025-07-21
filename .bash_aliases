@@ -78,10 +78,6 @@ alias free="free -mth"
 # Aliases for software managment
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoclean'
 
-#shutdown or reboot
-alias ssn="sudo shutdown now"
-alias sr="reboot"
-
 alias mv="mv -i"
 #alias rm="rm -I"
 alias rm="trash-put -v"
