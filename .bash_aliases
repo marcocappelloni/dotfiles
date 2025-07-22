@@ -8,10 +8,10 @@ cdor() {
 bettercd() {
   cdor $1
   if [ -z $1 ]; then
-    selection="$(ls -ad */ | fzf --height 45% --reverse --info hidden --prompt "$(pwd)/" --preview ' cd_pre="$(echo $(pwd)/$(echo {}))";
+    selection="$(lsd -ad */ | fzf --height 45% --reverse --info hidden --prompt "$(pwd)/" --preview ' cd_pre="$(echo $(pwd)/$(echo {}))";
                     echo $cd_pre;
                     echo;
-                    ls -a --color=always "${cd_pre}";
+                    lsd -a --color=always "${cd_pre}";
                     termpix --width 100 --true-color {} 2>/dev/null;
                     bat --style=numbers --theme=ansi --color=always {} 2>/dev/null' --bind alt-j:preview-down,alt-k:preview-up --preview-window=right:45%)"
     if [[ -d "$selection" ]]; then
@@ -60,11 +60,12 @@ alias extrr='extract_and_remove '
 alias cdb='bettercd'
 
 #list
-alias ls='lsd --color=auto'
-alias la='lsd -A'
-alias ll='lsd -Alh'
-alias l.="lsd -A | grep -E '^\.'"
-alias dir='lsd -al'
+alias ls='eza --long --color=always --git --icons=always'
+
+alias la='ls -A'
+alias ll='ls -Alh'
+alias l.="ls -A | grep -E '^\.'"
+alias dir='ls -al'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -106,3 +107,5 @@ alias hx="helix"
 alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
 
 alias man="batman"
+
+alias nvim-kick='NVIM_APPNAME=kickstart.nvim nvim'
