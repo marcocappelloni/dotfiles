@@ -62,10 +62,8 @@ alias cdb='bettercd'
 #list
 alias ls='eza --long --color=always --git --icons=always'
 
-alias la='ls -A'
 alias ll='ls -Alh'
 alias l.="ls -A | grep -E '^\.'"
-alias dir='ls -al'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -84,6 +82,7 @@ alias mv="mv -i"
 alias rm="trash-put -v"
 
 ### GIT
+alias g="lazygit"
 alias push="git push -u origin main"
 
 ### QTILE
