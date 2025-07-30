@@ -10,6 +10,35 @@ function _failed_cmd {
   fi
 }
 
+# Select the distribution to insert the symbol and the color appropriate
+OS_ID=""
+
+if [ -f /etc/os-release ]; then
+  # sourcing this file will fill up few variables,
+  # one of them is ID with the name of the distribution
+  . /etc/os-release
+  OS_ID="$ID"
+fi
+
+case "$OS_ID" in
+"ubuntu")
+  OS_SYMBOL=" "
+  OS_COLOR="\[$(tput setaf 168)\]"
+  ;;
+"debian")
+  OS_SYMBOL=" "
+  OS_COLOR="\[$(tput setaf 30)\]"
+  ;;
+"arch")
+  OS_SYMBOL=" "
+  OS_COLOR="\[$(tput setaf 39)\]"
+  ;;
+*)
+  OS_SYMBOL=""
+  OS_COLOR=""
+  ;;
+esac
+
 RED="\[$(tput setaf 1)\]"
 GREEN="\[$(tput setaf 2)\]"
 YELLOW="\[$(tput setaf 3)\]"
@@ -18,12 +47,13 @@ MAGENTA="\[$(tput setaf 5)\]"
 CYAN="\[$(tput setaf 6)\]"
 DARK_YELLOW="\[$(tput setaf 214)\]"
 ORANGE="\[$(tput setaf 208)\]"
-UBUNTU="\[$(tput setaf 168)\]"
+# UBUNTU="\[$(tput setaf 168)\]"
 RESET="\[$(tput sgr0)\]"
 BOLD="\[$(tput bold)\]"
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-PS1="${UBUNTU}  "
+# PS1="${UBUNTU}  "
+PS1="${OS_COLOR}${OS_SYMBOL} "
 PS1+="${BLUE}\u@\h "
 PS1+="${GREEN}\w "
 PS1+="${RED}\$(__git_ps1 '(%s )') "
