@@ -76,6 +76,7 @@ alias free="free -mth"
 
 # Aliases for software managment
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoclean'
+alias installed="sudo apt list --installed | grep "
 
 alias mv="mv -i"
 #alias rm="rm -I"
@@ -108,3 +109,6 @@ alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  
 alias man="batman"
 
 alias nvim-kick='NVIM_APPNAME=kickstart.nvim nvim'
+alias nvim-trial="NVIM_APPNAME=nvim_trial nvim"
+
+alias python="python3"
