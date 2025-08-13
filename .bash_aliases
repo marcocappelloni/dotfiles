@@ -112,3 +112,10 @@ alias nvim-kick='NVIM_APPNAME=kickstart.nvim nvim'
 alias nvim-trial="NVIM_APPNAME=nvim_trial nvim"
 
 alias python="python3"
+
+### GHOSTTY
+alias gha="ghostty +list-actions | fzf"
+alias ghf="ghostty +list-fonts | fzf"
+alias ghk="ghostty +list-keybinds | fzf"
+alias ghkey="ghostty +list-keybinds"
+alias ght="ghostty +list-themes | fzf"
