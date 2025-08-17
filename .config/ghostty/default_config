@@ -736,7 +736,7 @@ cursor-opacity = 1
 # 
 cursor-style = block
 
-# Sets the default blinking state of the cursor. This is just the default
+# Sets the default blinkin state of the cursor. This is just the default
 # state; running programs may override the cursor style using `DECSCUSR` (`CSI
 # q`).
 # 

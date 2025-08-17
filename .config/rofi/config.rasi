@@ -13,7 +13,8 @@ configuration{
     display-drun: "   Apps ";
 }
 
-@theme "themes/catppuccin-mocha.rasi"
+// @theme "themes/catppuccin-mocha.rasi"
+@theme "themes/monokai_pro.rasi"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;

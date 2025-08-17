@@ -119,3 +119,5 @@ alias ghf="ghostty +list-fonts | fzf"
 alias ghk="ghostty +list-keybinds | fzf"
 alias ghkey="ghostty +list-keybinds"
 alias ght="ghostty +list-themes | fzf"
+
+alias kit="kitty +kitten themes"
