@@ -136,7 +136,7 @@ show_file_or_dir_preview="if [ -d {} ]; then tree -L 2 {} | head -200; else bat 
 
 # #225577
 # Open in tmux popup if on tmux, otherwise use --height mode
-export FZF_DEFAULT_OPTS='--layout=reverse --border=bold --border=rounded --margin=3% --color=dark --color=border:#943B2F --preview="bat --color=always {}"'
+export FZF_DEFAULT_OPTS='--exact --layout=reverse --border=bold --border=rounded --margin=3% --color=dark --color=border:#943B2F --preview="bat --color=always {}"'
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_CTRL_R_OPTS="--style minimal --no-sort --no-preview --info inline"
