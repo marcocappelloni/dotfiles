@@ -72,7 +72,7 @@ alias grep='grep --color=auto'
 alias df='df -h'
 
 #free
-alias free="free -mth"
+#alias free="free -mth"
 
 # Aliases for software managment
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoclean'

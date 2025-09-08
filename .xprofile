@@ -1,0 +1,16 @@
+# rotate vertical monitor
+# xrandr --output HDMI-A-1 --left-of HDMI-A-0 --auto
+xrandr --output HDMI-A-1 --rotate right --auto --pos 0x0 --output HDMI-A-0 --auto --pos 1080x420 &
+
+# keyboard key press speed
+xset r rate 300 40 &
+
+# set of commands to disable the screensaver
+#exec xset s off
+#exec xset -dpms
+#exec xset s noblank
+
+# Load the Xresources file
+xrdb -merge ~/.Xresources
+
+. "$HOME/.cargo/env"

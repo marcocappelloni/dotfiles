@@ -30,4 +30,3 @@ fi
 if [ -d "/usr/local/texlive/2025/bin/x86_64-linux" ]; then
   PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 fi
-. "$HOME/.cargo/env"

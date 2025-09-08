@@ -5,7 +5,6 @@ nimona_colors.txt
 README.md
 /.config/alacritty
 /.config/helix
-/.config/i3
 /.config/nvim
 /.config/polybar
 /.config/qtile

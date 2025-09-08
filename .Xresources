@@ -235,3 +235,5 @@ UXTerm*colorBD: rgb:ff/ff/ff
 
 
 !Xcursor.theme: Catppuccin-Teal-Cursors
+Xcursor.theme: Yaru
+Xcursor.size: 24
