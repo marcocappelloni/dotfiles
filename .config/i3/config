@@ -154,7 +154,8 @@ exec --no-startup-id volumeicon
 
 # feh sets wallpaper
 # exec --no-startup-id feh --bg-fill /home/maky/Pictures/wallpapers/nordic-wallpapers/ign_batman.png --bg-fill /home/maky/Pictures/wallpapers/nordic-wallpapers/ign_unsplash24.png &
-exec --no-startup-id feh --bg-fill /home/maky/Pictures/wallpapers/ign_iceAndFire.jpg /home/maky/Pictures/wallpapers/Vertical/i2acrw30aeef1.png 
+# exec --no-startup-id feh --bg-fill /home/maky/Pictures/wallpapers/ign_iceAndFire.jpg /home/maky/Pictures/wallpapers/Vertical/digital-art-isolated-house.jpg 
+exec --no-startup-id feh --bg-fill  /home/maky/Pictures/wallpapers/TDM_08.png /home/maky/Pictures/wallpapers/Clearnight.jpg
 
 # Polybar
 # exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -167,7 +168,7 @@ exec --no-startup-id dunst
 #exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 exec_always --no-startup-id picom --config ~/.config/picom.conf
 
-exec --no-startup-id ~/PersonalHome/Scripts/MyApps/dimmer/dimmer_time_check.sh
+exec_always --no-startup-id /home/maky/PersonalHome/Scripts/MyApps/dimmer/dimmer_time_check.sh
 
 ###########################
 ########## RULES ##########

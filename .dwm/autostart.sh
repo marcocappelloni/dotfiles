@@ -10,7 +10,8 @@ xset -dpms
 xset s noblank
 
 # dwm status bar
-exec slstatus &
+#exec slstatus &
+exec dwmblocks &
 
 # wallpaper selection
 # nitrogen --restore &
