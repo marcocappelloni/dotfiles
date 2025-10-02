@@ -1,4 +1,50 @@
 $include /etc/inputrc
 
+# If set to ‘on’, Readline performs filename matching and completion in a case-insensitive fashion.
+# The default value is ‘off’.
 set completion-ignore-case On
+
+# This alters the default behavior of the completion functions. If set to ‘on’, words which have 
+# more than one possible completion cause the matches to be listed immediately instead of 
+# ringing the bell. The default value is ‘off’.
 set show-all-if-ambiguous On
+
+# If set to ‘on’, Readline displays possible completions using different colors to indicate
+# their file type. The color definitions are taken from the value of the LS_COLORS environment
+# variable. The default is ‘off’.
+set colored-stats On
+
+# If set to ‘on’, when listing completions, Readline displays the common prefix of the
+# set of possible completions using a different color. The color definitions are taken from
+# the value of the LS_COLORS environment variable. If there is a color definition in LS_COLORS
+# for the custom suffix ‘readline-colored-completion-prefix’, Readline uses this color for 
+# the common prefix instead of its default. The default is ‘off’.
+set colored-completion-prefix On
+
+# sets the maximum number of characters to be the common prefix to display for completions.
+# If the common prefix has more characters, they are replaced by ellipsis.
+#set completion-prefix-display-length 3
+
+# This variable, when set to ‘on’, forces Readline to match files whose names begin with a ‘.’
+# (hidden files) when performing filename completion. If set to ‘off’, the user must include the 
+# leading ‘.’ in the filename to be completed. This variable is ‘on’ by default.
+set match-hidden-files On
+
+# If set to ‘on’, menu completion displays the common prefix of the list of possible completions
+# (which may be empty) before cycling through the list. The default is ‘off’.
+set menu-complete-display-prefix On
+
+# If set to ‘on’, Readline displays completions with matches sorted horizontally in alphabetical order,
+# rather than down the screen. The default is ‘off’.
+set print-completions-horizontally On
+
+# If set to ‘on’, a character denoting a file’s type is appended to the filename when listing
+# possible completions. The default is ‘off’.
+set visible-stats Off
+
+# KEYBINDINGS
+
+# If press ALT-s add sudo at the start of the line
+"\es": "\C-asudo \C-e"
+
+
