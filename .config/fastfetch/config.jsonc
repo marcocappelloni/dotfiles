@@ -3,11 +3,11 @@
   "logo": {
     "type": "auto", // Logo type: auto, builtin, small, file, etc.
     //"source": "~/.config/fastfetch/wall.png", // Built-in logo name or file path
-    "source": "ubuntu", // Built-in logo name or file path
+    "source": "ubuntu_old", // Built-in logo name or file path
     "width": 60, // Width in characters (for image logos)
     "height": 20, // Height in characters (for image logos)
     "padding": {
-      "top": 0, // Top padding
+      "top": 5, // Top padding
       "left": 0, // Left padding
       "right": 2 // Right padding
     }
@@ -16,11 +16,15 @@
     "separator": "",
     "key": {
       "width": 16
-    }
+    },
   },
   "modules": [
+    //{
+    //  "key": " ",
+    //  "type": "custom"
+    //},
     {
-      "key": " ",
+      "key": "   HARDWARE",
       "type": "custom"
     },
     {
@@ -29,103 +33,202 @@
     },
     {
       // draw borders first to make colors of left and right border consistant
-      "key": "│            │\u001b[12D{#31}  {#37}user",
-      "type": "title",
-      "format": "{1}",
+      "key": "│            │\u001b[12D{#31}󰟀  {#37}type",
+      "type": "chassis",
+      "format": "{type}",
       "outputColor": "31;1"
     },
     {
-      "key": "│            │\u001b[12D{#32}󰇅  {#37}hname",
-      "type": "title",
-      "format": "{2}",
+      // draw borders first to make colors of left and right border consistant
+      "key": "│            │\u001b[12D{#32}  {#37}model",
+      "type": "custom",
+      "format": "Beelink EQR5",
       "outputColor": "32;1"
     },
     {
-      "key": "│            │\u001b[12D{#33}󰅐  {#37}uptime",
-      "type": "uptime",
-      "outputColor": "33;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#34}󰟾  {#37}distro",
-      "type": "os",
-      "outputColor": "34;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#35}  {#37}kernel",
-      "type": "kernel",
-      "outputColor": "35;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#36}󰏗  {#37}pkgs",
-      "type": "packages",
-      "outputColor": "36;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#31}󰇄  {#37}desktop",
-      "type": "de",
-      "outputColor": "31;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#31}󰇄  {#37}wm",
-      "type": "wm",
-      "outputColor": "31;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#32}󰌁  {#37}theme",
-      "type": "theme",
-      "outputColor": "32;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#33}  {#37}fonts",
-      "type": "font",
-      "outputColor": "33;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#34}  {#37}term",
-      "type": "terminal",
-      "outputColor": "34;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#35}  {#37}shell",
-      "type": "shell",
-      "outputColor": "35;1"
-    },
-    {
-      "key": "│            │\u001b[12D{#36}󰍛  {#37}cpu",
+      "key": "│            │\u001b[12D{#33}󰍛  {#37}cpu",
       "type": "cpu",
+      "format": "{name} {vendor} - {cores-physical} cores - freq {freq-max} ({temperature}) {cores-online}",
+      "temp": true,
       "showPeCoreCount": true,
+      "outputColor": "33;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#34}󰍛  {#37}gpu",
+      "type": "gpu",
+      "temp": true,
+      "format": "{vendor} {name} [{type}] ({temperature})",
+      "outputColor": "34;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#35}  {#37}memory",
+      "type": "memory",
+      "outputColor": "35;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#36}󰉉  {#37}disk",
+      "type": "physicaldisk",
+      "temp": true,
+      "format": "{size} [{physical-type}, {removable-type}] - ({temperature})",
       "outputColor": "36;1"
     },
     {
-      "key": "│            │\u001b[12D{#31}󰍛  {#37}gpu",
-      "type": "gpu",
-      "outputColor": "31;1"
+        "type": "display",
+        "key": "│            │\u001b[12D{#31}󰍹  {#37}display",
+        // Setting compactType to "none" or using an empty string 
+        // will often force each item to its own line.
+        "compactType": "none", 
+        
+        // This format will be used for EACH individual display.
+        // {?is-primary}* will add an asterisk to the primary monitor
+        "format": "{width}x{height} @ {refresh-rate}Hz in {inch}\" ({name}) {?is-primary}*{?}",
+        "outputColor": "31;1"
     },
     {
-      "key": "│            │\u001b[12D{#32}  {#37}swap",
-      "type": "swap",
+      "key": "╰────────────╯",
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "key": "   SOFTWARE",
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "key": "╭────────────╮",
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "key": "│            │\u001b[12D{#32}󰟾  {#37}distro",
+      "type": "os",
       "outputColor": "32;1"
     },
     {
-      "key": "│            │\u001b[12D{#33}󰉉  {#37}disk",
+      "key": "│            │\u001b[12D{#33}  {#37}kernel",
+      "type": "kernel",
+      "outputColor": "33;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#34}󰏗  {#37}pkgs",
+      "type": "packages",
+      "outputColor": "34;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#35}  {#37}desktop",
+      "type": "de",
+      "outputColor": "35;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#35}  {#37}wm",
+      "type": "wm",
+      "outputColor": "35;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#36}  {#37}term",
+      "type": "terminal",
+      "outputColor": "36;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#31}  {#37}shell",
+      "type": "shell",
+      "outputColor": "31;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#32}  {#37}editor",
+      "type": "editor",
+      "outputColor": "32;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#33}  {#37}root",
       "type": "disk",
       "folders": "/",
       "outputColor": "33;1"
     },
     {
-      "key": "│            │\u001b[12D{#34}  {#37}memory",
-      "type": "memory",
+      "key": "│            │\u001b[12D{#34}󱂶  {#37}home",
+      "type": "disk",
+      "folders": "/home",
       "outputColor": "34;1"
     },
     {
-      "key": "│            │\u001b[12D{#35}󰩟  {#37}network",
-      "type": "localip",
-      "format": "{1} ({4})",
+      "key": "│            │\u001b[12D{#35}  {#37}swap",
+      "type": "swap",
       "outputColor": "35;1"
     },
     {
-      "key": "├────────────┤",
+      "key": "╰────────────╯",
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "key": " CONNECTIONS",
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "key": "╭────────────╮",
+      "type": "custom",
+      "format": ""
+    },
+    //{
+    //  "key": "Beelink EQR5",
+    //  "type": "custom"
+    //},
+    {
+      // draw borders first to make colors of left and right border consistant
+      "key": "│            │\u001b[12D{#36}  {#37}user",
+      "type": "title",
+      "format": "{user-name}",
+      "outputColor": "36;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#31}󰇅  {#37}hname",
+      "type": "title",
+      "format": "{host-name}",
+      "outputColor": "31;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#32}  {#37}network",
+      "type": "localip",
+      "format": "{ipv4} ({ifname})",
+      "outputColor": "32;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#33}󰩠  {#37}publ IP",
+      "type": "publicip",
+      //"format": "{ipv4}",
+      "outputColor": "33;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#34}  {#37}wifi",
+      "type": "wifi",
+      //"format": "{ipv4}",
+      "outputColor": "34;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#35}󰂯  {#37}bt",
+      "type": "bluetoothradio",
+      //"format": "{ipv4}",
+      "outputColor": "35;1"
+    },
+    {
+      "key": "│            │\u001b[12D{#36}󰅐  {#37}uptime",
+      "type": "uptime",
+      "outputColor": "36;1"
+    },
+    {
+      "key": "╰────────────╯",
       "type": "custom"
+    },
+    //{
+    //  "key": "├────────────┤",
+    //  "type": "custom"
+    //},
+    {
+      "key": "╭────────────╮",
+      "type": "custom",
+      "format": ""
     },
     {
       "key": "│            │\u001b[12D{#39}  colors",
