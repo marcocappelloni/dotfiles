@@ -8,7 +8,11 @@ configuration{
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
-    disable-history: false;
+    /* If you want to enable again the order based on the history and frequently usage
+     * put disable-history: false and remove sort: false */
+    /*disable-history: false;*/
+    disable-history: true;
+    sort: false;
     hide-scrollbar: true;
     display-drun: "   Apps ";
 }

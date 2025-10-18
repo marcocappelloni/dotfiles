@@ -1,0 +1,13 @@
+/**
+ * ROFI Monokai Pro Color Theme
+ */
+* {
+    bg-col:  #2c292d;
+    bg-col-light: #2c292d;
+    border-col: #2c292d;
+    selected-col: #2c292d;
+    blue: #66d9ef;
+    fg-col: #fcfcfa;
+    fg-col2: #cc6633;
+    grey: #676568;
+}

@@ -112,7 +112,7 @@ default_floating_border normal
 # Popups during fullscreen mode
 popup_during_fullscreen smart
 
-gaps inner 8
+gaps inner 5
 gaps outer 0
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
@@ -261,6 +261,7 @@ for_window [class="kitty"] focus
 for_window [class="ghostty"] focus
 
 for_window [class="^.*"] border pixel $border
+for_window [class="Yad"] floating enable
 
 
 ################# bar appearance                   

@@ -1,0 +1,120 @@
+#!/bin/bash
+# Build the shell prompt for bash. This file is called inside .bashrc
+# https://wiki.archlinux.org/title/Bash/Prompt_customization#Terminfo_escape_sequences
+
+shopt -s checkwinsize
+
+function _failed_cmd {
+  if [[ $? -eq 0 ]]; then
+    printf "\e[32m"
+  else
+    printf "\e[31m󰅖"
+  fi
+}
+
+function _draw_line() {
+  local LENGTH_STRING=$1
+  local COL=$((COLUMNS - LENGTH_STRING))
+
+  if ((COL <= 0)); then
+    return
+  fi
+
+  while ((COL-- > 0)); do
+    printf '\u2500'
+    #printf "-"
+  done
+}
+
+# Select the distribution to insert the symbol and the color appropriate
+OS_ID=""
+
+if [ -f /etc/os-release ]; then
+  # sourcing this file will fill up few variables,
+  # one of them is ID with the name of the distribution
+  . /etc/os-release
+  OS_ID="$ID"
+fi
+
+case "$OS_ID" in
+"ubuntu")
+  OS_SYMBOL=" "
+  OS_COLOR="\001$(tput setaf 168)\002"
+  ;;
+"debian")
+  OS_SYMBOL=" "
+  OS_COLOR="\001$(tput setaf 30)\002"
+  ;;
+"arch")
+  OS_SYMBOL=" "
+  OS_COLOR="\001$(tput setaf 39)\002"
+  ;;
+*)
+  OS_SYMBOL=""
+  OS_COLOR=""
+  ;;
+esac
+
+RED="\001$(tput setaf 1)\002"
+GREEN="\001$(tput setaf 2)\002"
+YELLOW="\001$(tput setaf 3)\002"
+BLUE="\001$(tput setaf 4)\002"
+MAGENTA="\001$(tput setaf 5)\002"
+CYAN="\001$(tput setaf 6)\002"
+DARK_YELLOW="\001$(tput setaf 214)\002"
+ORANGE="\001$(tput setaf 208)\002"
+GREY="\001$(tput setaf 240)\002"
+RESET="\001$(tput sgr0)\002"
+BOLD="\001$(tput bold)\002"
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+# This command runs right before the prompt is displayed.
+# We calculate the VISIBLE length of the prompt string here.
+PROMPT_COMMAND='
+  # 1. Capture the actual Git prompt string
+  # We use a command substitution to get the output of the function, 
+  # which will be empty outside a Git repo.
+  # We use the same format string as in PS1: '\''(%s )'\''.
+  git_output="$(__git_ps1 '\''(%s )'\'')"
+  
+  # 2. Start with the length of dynamic shell variables (\u, \h, \w)
+  length=$(( ${#USER} + ${#HOSTNAME} + ${#PWD} ))
+
+  # 3. Add the length of fixed symbols and spaces:
+  # OS_SYMBOL (2 chars)
+  # Space (1)
+  # @ (1)
+  # Space (1)
+  # Space (1)
+  # failed_cmd symbol (1)
+  #  (1)
+  # Space (1)
+  # Total fixed: 2 + 6 = 8 (Corrected: OS_SYMBOL+1 + @+1 + space+1 + failed_cmd+1 + +1 = 7)
+  # Let stick to the visible characters:
+  # (OS_SYMBOL) + space + @ + space + space + failed_cmd_symbol +  + space
+  # E.g.,  + \s + @ + \s + \s +  +  + \s 
+  # Visible fixed length: 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 8
+  #length=$(( length + 8 ))
+  #length=$(( length + 0 ))
+  
+  # 4. Add the actual length of the captured Git prompt output
+  # If we are not in a Git repo, ${#git_output} will be 0.
+  length=$(( length + ${#git_output} ))
+
+  # Export the final length for the function call in PS1
+  CURRENT_PROMPT_LENGTH=$length
+'
+
+PS1="${OS_COLOR}${OS_SYMBOL} "
+PS1+="${BLUE}\u@\h "
+PS1+="${GREEN}\w "
+PS1+="${RED}\$(__git_ps1 '(%s )') "
+PS1+="\$(_failed_cmd) "
+# Instead of "${#PS1}", we now use the variable set by PROMPT_COMMAND.
+# We must use a **backslashed dollar sign** (`\$`) so the variable is only
+# expanded when the prompt is rendered, after PROMPT_COMMAND runs.
+PS1+="${GREY}\$(_draw_line \$CURRENT_PROMPT_LENGTH)\\n"
+#PS1+="${DARK_YELLOW}$(printf '\u2500') "
+PS1+="${DARK_YELLOW} "
+PS1+="${RESET}"
