@@ -4,7 +4,7 @@
 * {
     bg-col:  #2c292d;
     bg-col-light: #2c292d;
-    border-col: #2c292d;
+    border-col: #66d9ef;
     selected-col: #2c292d;
     blue: #66d9ef;
     fg-col: #fcfcfa;

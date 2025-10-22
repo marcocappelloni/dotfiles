@@ -12,8 +12,6 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    width: 640px;
-    height: 650px;
     border: 5px;
     border-color: @border-col;
     background-color: @bg-col;
@@ -30,19 +28,25 @@ inputbar {
 }
 
 listview {
-    //border: 0px 0px 0px;
     padding: 6px 0px 0px;
     margin: 15px 0px 0px 20px;
     background-color: @bg-col;
 }
 
 element {
-    //padding: 50px;
     background-color: @bg-col;
     text-color: @fg-col;
 }
 
 /* Style for elements marked as 'Active' (-a flag) */
-element active {
+element.active {
     text-color: @fg-col2;
 }
+
+/* Style for elements marked as 'Active' (-u flag) */
+element.urgent {
+    //text-color: #FFC0CB;
+    //background-color: #550000;
+    text-color: #66d9ef;
+}
+

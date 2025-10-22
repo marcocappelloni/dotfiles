@@ -7,6 +7,7 @@ gtk-titlebar = false
 background-opacity = 0.9
 background-blur = true
 unfocused-split-opacity = 0.5
+unfocused-split-fill = #500028
 cursor-style-blink = true
 
 # Font
@@ -20,3 +21,6 @@ mouse-hide-while-typing = true
 
 # Configuration file
 # config-file=""
+window-decoration = none
+gtk-titlebar = false
+gtk-adwaita = false

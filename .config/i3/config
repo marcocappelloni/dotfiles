@@ -258,7 +258,10 @@ for_window [class="Terminator"] focus
 for_window [class="Urxvt"] focus
 for_window [class="Alacritty"] focus
 for_window [class="kitty"] focus
-for_window [class="ghostty"] focus
+#for_window [class="com.mitchellh.ghostty"] focus
+#for_window [class="com.mitchellh.ghostty"] border normal
+#for_window [class="com.mitchellh.ghostty"] client.focused #FF0000 #282828 #ebdbd2 #FF0000 #FF0000
+#for_window [class="com.mitchellh.ghostty"] client.unfocused #00FF00 #282828 #ebdbd2 #444444 #00FF00
 
 for_window [class="^.*"] border pixel $border
 for_window [class="Yad"] floating enable
