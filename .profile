@@ -30,3 +30,10 @@ fi
 if [ -d "/usr/local/texlive/2025/bin/x86_64-linux" ]; then
   PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 fi
+
+# export CAPACITOR_ANDROID_STUDIO_PATH="/snap/bin/android-studio"
+# export ANDROID_SDK_ROOT="/home/maky/Android/Sdk"
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

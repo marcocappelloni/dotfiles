@@ -69,42 +69,48 @@ BOLD="\001$(tput bold)\002"
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-# This command runs right before the prompt is displayed.
-# We calculate the VISIBLE length of the prompt string here.
-PROMPT_COMMAND='
-  # 1. Capture the actual Git prompt string
-  # We use a command substitution to get the output of the function, 
-  # which will be empty outside a Git repo.
-  # We use the same format string as in PS1: '\''(%s )'\''.
-  git_output="$(__git_ps1 '\''(%s )'\'')"
-  
-  # 2. Start with the length of dynamic shell variables (\u, \h, \w)
-  length=$(( ${#USER} + ${#HOSTNAME} + ${#PWD} ))
+function _update_prompt_length {
+  # All variables are local now, except for the one needed by PS1.
 
-  # 3. Add the length of fixed symbols and spaces:
-  # OS_SYMBOL (2 chars)
-  # Space (1)
-  # @ (1)
-  # Space (1)
-  # Space (1)
-  # failed_cmd symbol (1)
-  #  (1)
-  # Space (1)
-  # Total fixed: 2 + 6 = 8 (Corrected: OS_SYMBOL+1 + @+1 + space+1 + failed_cmd+1 + +1 = 7)
-  # Let stick to the visible characters:
-  # (OS_SYMBOL) + space + @ + space + space + failed_cmd_symbol +  + space
-  # E.g.,  + \s + @ + \s + \s +  +  + \s 
-  # Visible fixed length: 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 8
-  #length=$(( length + 8 ))
-  #length=$(( length + 0 ))
-  
-  # 4. Add the actual length of the captured Git prompt output
-  # If we are not in a Git repo, ${#git_output} will be 0.
-  length=$(( length + ${#git_output} ))
+  # 1. Calculate the visible path length (PWD_LEN)
+  local PWD_LEN=0
 
-  # Export the final length for the function call in PS1
+  if [[ "$PWD" == "$HOME" ]]; then
+    PWD_LEN=1 # "~"
+  elif [[ "$PWD" == "$HOME"* ]]; then
+    # "~/relative/path"
+    PWD_LEN=$((${#PWD} - ${#HOME} + 1))
+  else
+    PWD_LEN=${#PWD} # Full path
+  fi
+
+  # 2. Capture the actual Git prompt string
+  local git_output="$(__git_ps1 '(%s )')"
+
+  # 3. Calculate the total VISIBLE length
+  # Fixed elements length: OS_SYMBOL (2) + 5 spaces + @ (1) + failed_cmd (1) +  (1) = 9 characters
+  # Correction on fixed elements:
+  # OS_SYMBOL: 2
+  # Space (after OS_SYMBOL): 1
+  # @: 1
+  # Space (after \h): 1
+  # failed_cmd symbol: 1
+  # Space (after failed_cmd): 1
+  # : 1
+  # Total Fixed Symbols/Spaces = 7 (excluding \u, \h, \w)
+  local FIXED_LEN=10
+
+  local length=$((${#USER} + ${#HOSTNAME} + PWD_LEN + ${#git_output} + FIXED_LEN))
+
+  # Set the final variable in the global scope so PS1 can access it
   CURRENT_PROMPT_LENGTH=$length
-'
+}
+
+# --- PROMPT_COMMAND ASSIGNMENT ---
+# Call the function to set CURRENT_PROMPT_LENGTH before the prompt is drawn
+# PROMPT_COMMAND is specifically designed to contain a command string that Bash
+# will execute immediately before displaying the primary prompt ($PS1).
+PROMPT_COMMAND='_update_prompt_length'
 
 PS1="${OS_COLOR}${OS_SYMBOL} "
 PS1+="${BLUE}\u@\h "
