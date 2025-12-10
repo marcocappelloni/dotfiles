@@ -265,6 +265,7 @@ for_window [class="kitty"] focus
 
 for_window [class="^.*"] border pixel $border
 for_window [class="Yad"] floating enable
+for_window [class="EpsonPrinterUtility"] floating enable, move position center
 
 
 ################# bar appearance                   

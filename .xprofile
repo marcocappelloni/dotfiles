@@ -14,4 +14,9 @@ xset r rate 300 40 &
 # Load the Xresources file
 xrdb -merge ~/.Xresources
 
+# Environment variables
+export EDITOR='nvim'
+export VISUAL='nvim'
+export BROWSER='brave'
+
 . "$HOME/.cargo/env"

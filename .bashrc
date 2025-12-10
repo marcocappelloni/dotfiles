@@ -121,10 +121,6 @@ bind "set completion-ignore-case on"
 ### ALIASES ###
 source /home/maky/.bash_aliases
 
-### EXPORT ###
-export EDITOR='nvim'
-export VISUAL='nvim'
-
 # Shell options "shopt"
 shopt -s cdspell        # autocorrects cd misspellings
 shopt -s cmdhist        # save multi-line commands in history as single line
