@@ -19,4 +19,4 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export BROWSER='brave'
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
