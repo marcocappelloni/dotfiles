@@ -119,7 +119,7 @@ fi
 bind "set completion-ignore-case on"
 
 ### ALIASES ###
-source /home/maky/.bash_aliases
+source /home/maky/.config/bash/bash_aliases
 
 # Shell options "shopt"
 shopt -s cdspell        # autocorrects cd misspellings
@@ -157,8 +157,8 @@ _fzf_comprun() {
 # ALT-C cd into the selected directory
 eval "$(fzf --bash)"
 
-if [ -f ~/.bash_prompt ]; then
-  source ~/.bash_prompt
+if [ -f ~/.config/bash/bash_prompt ]; then
+  source ~/.config/bash/bash_prompt
 fi
 
 # Set the vi keybindings

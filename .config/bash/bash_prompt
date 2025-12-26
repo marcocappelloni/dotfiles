@@ -1,4 +1,4 @@
 #!/bin/bash
 # Build the shell prompt for bash. This file is called inside .bashrc
 # https://wiki.archlinux.org/title/Bash/Prompt_customization#Terminfo_escape_sequences
-source /home/maky/dotfiles/prompts/line_after_prompt
+source /home/maky/.config/bash/prompts/line_after_prompt
