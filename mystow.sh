@@ -28,6 +28,6 @@ done
 
 echo "Do you want to do the restore of the git repository? (Y/N)"
 read answer
-if [[ ! "$answer" =~ ^[Yy]$ ]]; then
+if [[ "$answer" =~ ^[Yy]$ ]]; then
   git restore .
 fi
