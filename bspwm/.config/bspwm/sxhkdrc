@@ -1,0 +1,209 @@
+#
+# wm independent hotkeys
+#
+
+
+########## APPS ##########
+
+# First browser
+super + F1
+	  brave
+
+super + shift + F1
+    brave --incognito
+
+# Second browser
+super + F2
+	  chromium
+
+#File manager
+super + F3
+    pcmanfm
+
+super + F5
+    libreoffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2025.ods
+
+super + F6
+    evolution
+
+# terminal emulator
+super + Return
+	  kitty
+
+super + shift + Return
+    ghostty
+
+#Calendar
+super + c
+    gsimplecal
+
+# Apps launcher
+super + d
+    rofi -show drun -show-icons -monitor 1
+
+super + shift + d
+    dmenu_run -i -fn 'FiraCode Nerd Font:size=10' -l 15
+
+# Pass menu
+super + p
+    passmenu -l 15
+
+super + shift + p
+    qtpass
+
+# Show opened windows
+super + w
+    rofi -show window -show-icons
+
+
+########## SCRIPTS ##########
+
+# Keybindings
+super + F9
+    keybindings
+
+# Vim keybindings list
+super + b
+    vim_keys
+
+# Development environment
+super + e
+    devel_environment
+
+# Modified git repositories
+super + g
+    git_modified_repos
+
+super + shift + h
+    listconfigs
+
+# Clock
+super + t
+    clock
+
+super + shift + t
+    todomenu
+
+
+########## BSPWM HOTKEYS ##########
+
+# focus to the given desktop
+super + {1-9}
+	bspc desktop --focus '{1,2,3,4,5,6,7,8,9}'
+
+# send to the given desktop and focus on it
+super + shift + {1-9}
+	bspc node -d '{1,2,3,4,5,6,7,8,9}' --follow
+
+# set the window state
+super + {f,shift + f}
+	bspc node -t {fullscreen,tiled}
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# quit bspwm
+super + alt + q
+	bspc quit
+
+super + 0
+  powermenu
+
+# restart bspwm
+super + alt + r
+	bspc wm -r
+
+# close window
+super + shift + q
+	bspc node -c
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# focus the node in the given direction
+#super + {_,shift + }{h,j,k,l}
+#	bspc node -{f,s} {west,south,north,east}
+
+# focus the node in the given direction
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# send the node to the node in the given direction
+super + shift + {Left,Down,Up,Right}
+	bspc node -n {west,south,north,east} --follow
+
+# set the node flags
+#super + ctrl + {m,x,y,z}
+#	bspc node -g {marked,locked,sticky,private}
+
+super + Prior
+  bspc monitor -f next
+
+super + Next
+  bspc monitor -f prev
+
+# focus the node for the given path jump
+#super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+#super + {_,shift + }c
+#	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+#super + bracket{left,right}
+#	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+#super + {grave,Tab}
+#	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+#super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
+
+
+## preselect the direction
+#super + ctrl + {h,j,k,l}
+#	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+#super + ctrl + {1-9}
+#	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+#super + ctrl + space
+#	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+#super + ctrl + shift + space
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+#super + alt + {h,j,k,l}
+#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+#super + alt + shift + {h,j,k,l}
+#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+#super + {Left,Down,Up,Right}
+#	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+XF86AudioRaiseVolume
+  amixer set Master '5%+'
+
+XF86AudioLowerVolume
+  amixer set Master '5%-'
+
+XF86AudioMute
+  amixer set Master 1+ toggle

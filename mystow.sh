@@ -4,6 +4,7 @@ PACKAGES_TO_STOW=(
   #"alacritty"
   "bash"
   "bat"
+  "bspwm"
   "dwm"
   "fastfetch"
   "ghostty"
