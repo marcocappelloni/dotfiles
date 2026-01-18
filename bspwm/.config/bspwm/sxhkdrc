@@ -2,7 +2,6 @@
 # wm independent hotkeys
 #
 
-
 ########## APPS ##########
 
 # First browser
@@ -84,6 +83,8 @@ super + t
 super + shift + t
     todomenu
 
+super + 0
+  powermenu
 
 ########## BSPWM HOTKEYS ##########
 
@@ -97,7 +98,7 @@ super + shift + {1-9}
 
 # set the window state
 super + {f,shift + f}
-	bspc node -t {fullscreen,tiled}
+	bspc node -t {floating,tiled}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -106,9 +107,6 @@ super + Escape
 # quit bspwm
 super + alt + q
 	bspc quit
-
-super + 0
-  powermenu
 
 # restart bspwm
 super + alt + r
@@ -123,10 +121,6 @@ super + m
 	bspc desktop -l next
 
 # focus the node in the given direction
-#super + {_,shift + }{h,j,k,l}
-#	bspc node -{f,s} {west,south,north,east}
-
-# focus the node in the given direction
 super + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
@@ -134,70 +128,23 @@ super + {Left,Down,Up,Right}
 super + shift + {Left,Down,Up,Right}
 	bspc node -n {west,south,north,east} --follow
 
-# set the node flags
-#super + ctrl + {m,x,y,z}
-#	bspc node -g {marked,locked,sticky,private}
-
+# focus the next monitor
 super + Prior
-  bspc monitor -f next
-
-super + Next
   bspc monitor -f prev
 
-# focus the node for the given path jump
-#super + {p,b,comma,period}
-#	bspc node -f @{parent,brother,first,second}
+# focus the previous monitor
+super + Next
+  bspc monitor -f next
 
-# focus the next/previous window in the current desktop
-#super + {_,shift + }c
-#	bspc node -f {next,prev}.local.!hidden.window
+# send the node to the previous monitor
+super + shift + Prior
+  bspc node -m prev --follow
 
-# focus the next/previous desktop in the current monitor
-#super + bracket{left,right}
-#	bspc desktop -f {prev,next}.local
+# send the node to the next monitor
+super + shift + Next
+  bspc node -m next --follow
 
-# focus the last node/desktop
-#super + {grave,Tab}
-#	bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-#super + {o,i}
-#	bspc wm -h off; \
-#	bspc node {older,newer} -f; \
-#	bspc wm -h on
-
-
-## preselect the direction
-#super + ctrl + {h,j,k,l}
-#	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-#super + ctrl + {1-9}
-#	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-#super + ctrl + space
-#	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-#super + ctrl + shift + space
-#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-
-# expand a window by moving one of its side outward
-#super + alt + {h,j,k,l}
-#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-#super + alt + shift + {h,j,k,l}
-#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-# move a floating window
-#super + {Left,Down,Up,Right}
-#	bspc node -v {-20 0,0 20,0 -20,20 0}
+########## Volume keys ##########
 
 XF86AudioRaiseVolume
   amixer set Master '5%+'
