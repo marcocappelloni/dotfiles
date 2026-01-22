@@ -12,6 +12,7 @@ FLOATING_APPS=(
   mplayer2
   Nm-connection-editor
   pavucontrol
+  zenity
 )
 
 ########### MONITORS  ##########
@@ -41,7 +42,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 for app in ${FLOATING_APPS[*]}; do
-  bspc rule -a "$app" state=floating focus=on
+  bspc rule -a "$app" state=floating focus=on center=on
 done
 
 ########### AUTOSTARTS  ##########
