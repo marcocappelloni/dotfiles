@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FOCUSED_COLOR=$(get_xresource_color color4)
+FOCUSED_COLOR=$(get_xresource_color color6)
 NORMAL_COLOR=$(get_xresource_color background)
 ACTIVE_COLOR=$(get_xresource_color color8)
 PRESEL_COLOR=$(get_xresource_color color1)

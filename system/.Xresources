@@ -7,7 +7,13 @@
 ! Xft.dpi:   96
 ! Uncomment one of the next lines to select a theme
 ! Catppuccin frappe
-#include ".Xresources.d/themes/nimona.Xresources"
+! #include ".Xresources.d/themes/frappe.Xresources"
+! Catppuccin mocha
+! #include ".Xresources.d/themes/mocha.Xresources"
+! Catppuccin macchiato
+#include ".Xresources.d/themes/macchiato.Xresources"
+! Nimona
+! #include ".Xresources.d/themes/nimona.Xresources"
 ! Nord
 ! #include ".Xresources.d/themes/nord.Xresources"
 ! Dracula
