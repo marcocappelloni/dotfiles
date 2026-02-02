@@ -11,13 +11,19 @@
 ! Catppuccin mocha
 ! #include ".Xresources.d/themes/mocha.Xresources"
 ! Catppuccin macchiato
-#include ".Xresources.d/themes/macchiato.Xresources"
+! #include ".Xresources.d/themes/macchiato.Xresources"
 ! Nimona
 ! #include ".Xresources.d/themes/nimona.Xresources"
 ! Nord
 ! #include ".Xresources.d/themes/nord.Xresources"
 ! Dracula
 ! #include ".Xresources.d/themes/dracula.Xresources"
+! Tokyonight moon
+! #include ".Xresources.d/themes/tokyonight_moon.Xresources"
+! Tokyonight night
+! #include ".Xresources.d/themes/tokyonight_night.Xresources"
+! Tokyonight storm
+#include ".Xresources.d/themes/tokyonight_storm.Xresources"
 
 ! general settings
 URxvt.saveLines:        50000

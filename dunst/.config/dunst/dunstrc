@@ -1,0 +1,61 @@
+[global]
+    ### Display Settings ###
+    width = 200
+    height = 300
+    origin = top-right
+    offset = 20x50 
+    
+    # Ensure it follows the mouse or primary monitor in bspwm
+    # follow = mouse
+    monitor = 0
+
+    font = Sans 10
+    format = "<b>%s</b>\n%b"
+    
+    ### Icons ###
+    icon_theme = "Yaru"
+    enable_recursive_icon_lookup = true
+    #icon_position = left
+    #max_icon_size = 32
+    icon_position = off
+    max_icon_size = 0
+    min_icon_size = 0
+
+    ### UI Design ###
+    transparency = 0
+    padding = 8
+    horizontal_padding = 8
+    separator_height = 1
+    frame_width = 1
+    frame_color = "#6092BE"
+    alignment = center
+    
+    # Corner radius (Dunst 1.11.0 supports this, looks great on bspwm)
+    corner_radius = 4
+    
+    ### Behavior ###
+    show_indicators = yes
+    show_age_threshold = 60
+    history_length = 20
+    sort = yes
+    idle_threshold = 120
+    
+    # Stay on top of other windows
+    layer = top
+    force_xinerama = true
+
+[urgency_low]
+    background = "#6092BE"
+    foreground = "#FFFFFF"
+    timeout = 10
+
+[urgency_normal]
+    background = "#6092BE"
+    foreground = "#FFFFFF"
+    timeout = 20
+
+[urgency_critical]
+    background = "#801515"
+    foreground = "#FFFFFF"
+    frame_color = "#FF0000"
+    timeout = 0

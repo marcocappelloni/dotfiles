@@ -52,6 +52,7 @@ feh --bg-fill /home/maky/Pictures/wallpapers/TDM_08.png /home/maky/Pictures/wall
 /home/maky/PersonalHome/Scripts/MyApps/dimmer/dimmer_time_check.sh &
 /home/maky/.config/bspwm/polybar/launch.sh &
 picom --config ~/.config/picom.conf &
+/home/maky/.config/conky/conky.sh &
 
 # set of commands to disable the screensaver
 xset s off &

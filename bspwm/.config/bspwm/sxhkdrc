@@ -19,6 +19,9 @@ super + F2
 super + F3
     pcmanfm
 
+super + shift + F3
+    kitty --class yazi -e yazi
+
 super + F5
     libreoffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2025.ods
 
@@ -102,7 +105,7 @@ super + {f,shift + f}
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send --expire-time=3000 "sxhkd" "Reloaded config"
 
 # quit bspwm
 super + alt + q
@@ -110,7 +113,7 @@ super + alt + q
 
 # restart bspwm
 super + alt + r
-	bspc wm -r
+	bspc wm -r; notify-send --expire-time=3000 "bspwm" "Restarted"
 
 # close window
 super + shift + q
