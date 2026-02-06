@@ -64,6 +64,14 @@ super + w
 super + F9
     keybindings
 
+# Dictionary definition of selected word
+super + F10
+    definition_selection
+
+# Dictionary definition of entered word 
+super + shift + F10
+    definition_dmenu
+
 # Vim keybindings list
 super + b
     vim_keys
