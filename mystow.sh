@@ -5,6 +5,8 @@ PACKAGES_TO_STOW=(
   "bash"
   "bat"
   "bspwm"
+  "conky"
+  "dunst"
   "dwm"
   "fastfetch"
   "ghostty"

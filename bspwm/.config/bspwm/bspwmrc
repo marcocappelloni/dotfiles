@@ -47,12 +47,12 @@ done
 
 ########### AUTOSTARTS  ##########
 pgrep -x sxhkd >/dev/null || sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
-dunst &
+pgrep -x dunst >/dev/null || dunst >/dev/null 2>&1 &
 feh --bg-fill /home/maky/Pictures/wallpapers/TDM_08.png /home/maky/Pictures/wallpapers/Clearnight.jpg
 /home/maky/PersonalHome/Scripts/MyApps/dimmer/dimmer_time_check.sh &
-/home/maky/.config/bspwm/polybar/launch.sh &
-picom --config ~/.config/picom.conf &
-/home/maky/.config/conky/conky.sh &
+/home/maky/.config/bspwm/polybar/launch.sh >/dev/null 2>&1 &
+pgrep -x picom >/dev/null || picom --config ~/.config/picom.conf &
+pgrep -x conky >/dev/null || /home/maky/.config/conky/conky.sh &
 
 # set of commands to disable the screensaver
 xset s off &

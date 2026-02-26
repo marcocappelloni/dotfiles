@@ -23,7 +23,7 @@ super + shift + F3
     kitty --class yazi -e yazi
 
 super + F5
-    libreoffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2025.ods
+    libreoffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2026.ods
 
 super + F6
     evolution
@@ -71,6 +71,10 @@ super + F10
 # Dictionary definition of entered word 
 super + shift + F10
     definition_dmenu
+
+# Color switcher 
+super + F11
+    color_switcher
 
 # Vim keybindings list
 super + b
