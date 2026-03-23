@@ -4,6 +4,10 @@
 
 ########## APPS ##########
 
+# Screenshot
+Print
+    flameshot gui
+
 # First browser
 super + F1
 	  brave
