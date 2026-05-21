@@ -27,7 +27,8 @@ super + shift + F3
     kitty --class yazi -e yazi
 
 super + F5
-    libreoffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2026.ods
+    flatpak run org.libreoffice.LibreOffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2026.ods
+    #libreoffice --calc ~/PersonalHome/Lavoro/PizzaExpress/WorkingHours_2026.ods
 
 super + F6
     evolution

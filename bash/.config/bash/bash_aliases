@@ -60,7 +60,7 @@ alias extrr='extract_and_remove '
 alias cdb='bettercd'
 
 #list
-alias ls='eza --long --color=always --git --icons=always'
+alias ls='eza --long --color=always --git --icons=always --group-directories-first'
 
 alias ll='ls -Alh'
 alias l.="ls -A | grep -E '^\.'"
