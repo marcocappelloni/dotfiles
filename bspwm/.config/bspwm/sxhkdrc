@@ -17,7 +17,8 @@ super + shift + F1
 
 # Second browser
 super + F2
-	  chromium
+  flatpak run app.zen_browser.zen
+	  #chromium
 
 #File manager
 super + F3
