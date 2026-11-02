@@ -1,5 +1,6 @@
 # horizontal monitor setting
-xrandr --output HDMI-A-1 --left-of HDMI-A-0 --auto
+xrandr --output HDMI-A-1 --primary --right-of HDMI-A-0
+# xrandr --output HDMI-A-1 --primary --right-of HDMI-A-0 --auto
 # vertical monitor setting
 # xrandr --output HDMI-A-1 --rotate right --auto --pos 0x0 --output HDMI-A-0 --auto --pos 1080x420 &
 

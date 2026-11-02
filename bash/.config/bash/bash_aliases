@@ -76,6 +76,7 @@ alias df='df -h'
 
 # Aliases for software managment
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoclean'
+alias updateall='sudo apt update && sudo apt upgrade -y && sudo apt autoclean && flatpak update -y && sudo snap refresh'
 alias installed="sudo apt list --installed | grep "
 
 alias mv="mv -i"

@@ -34,6 +34,14 @@ fi
 # export CAPACITOR_ANDROID_STUDIO_PATH="/snap/bin/android-studio"
 # export ANDROID_SDK_ROOT="/home/maky/Android/Sdk"
 
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# set PATH so it includes the Android Sdk if it exists
+if [ -d "$HOME/Android/Sdk" ]; then
+  PATH="$PATH:$HOME/Android/Sdk/emulator"
+  PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+fi
+
+# set PATH so it includes the Flutter binaries if it exists
+if [ -d "$HOME/packages/flutter/flutter" ]; then
+  PATH="$PATH:$HOME/packages/flutter/flutter/bin"
+  export CHROME_EXECUTABLE=/snap/bin/brave
+fi
