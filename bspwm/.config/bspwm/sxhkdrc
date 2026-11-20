@@ -86,12 +86,16 @@ super + F11
 super + b
     vim_keys
 
-# Development environment
+# Development environmen
 super + e
     devel_environment
 
 # Modified git repositories
 super + g
+    git_aliases
+
+# Modified git repositories
+super + shift + g
     git_modified_repos
 
 super + shift + h
